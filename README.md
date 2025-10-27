@@ -16,3 +16,4 @@ end
 
 assign rst_sync_n = rst_s[1];
 ```
+Resources: ![Differences between Asynchronous and Synchronous Resets](https://www.vemeko.com/blog/differences-between-asynchronous-and-synchronous-resets.html)
