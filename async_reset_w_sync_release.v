@@ -1,9 +1,9 @@
-reg [1:0] rstn_s;
-wire rstn_sync;
+reg [1:0] rst_s;
+wire rst_sync_n;
 
-always @(posedge clk or negedge rstn_async) begin
-  if (~rstn_async) rstn_sync[1:0] <= 2'b00;
-  else rstn_s[1:0] <= {rstn_s[0], 1'b1};
+always @(posedge clk or negedge rst_async_n) begin
+  if (~rst_async_n) rst_s[1:0] <= 2'b00;
+  else rst_s[1:0] <= {rst_s[0], 1'b1};
 end
 
-assign rstn_sync = rstn_s[1];
+assign rst_sync_n = rst_s[1];
